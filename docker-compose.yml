@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  python38:
+    image: centos7-python:3.8.10:latest
+    #restart: unless-stopped
+    volumes:
+      - ./config:/code:ro
+      - ./facebook1:/chenghui:ro
+    privileged: true
+    stdin_open: true
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
